@@ -34,16 +34,13 @@ namespace AfpaTinderMvc.Models
         public string Password { get; set; }
 
         [StringLength(100)]
-        [Required]
         public string Telephone { get; set; }
 
         [Required]
         public bool Statut { get; set; }
 
-        [Required]
         public double Latitude { get; set; }
 
-        [Required]
         public double Longitude { get; set; }
     }
 }
