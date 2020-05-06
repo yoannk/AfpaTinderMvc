@@ -10,6 +10,11 @@ namespace AfpaTinderMvc.Models
     [Table("Personne")]
     public class Personne
     {
+        public Personne()
+        {
+            Loisirs = new HashSet<Loisir>();
+        }
+
         [Key]
         public int Id { get; set; }
 

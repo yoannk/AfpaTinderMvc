@@ -24,7 +24,10 @@
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Loisir>()
+                .HasMany(e => e.Personnes)
+                .WithMany(e => e.Loisirs)
+                .Map(m => m.ToTable("PersonneLoisir").MapLeftKey("idLoisir").MapRightKey("idPersonne"));
         }
     }
 

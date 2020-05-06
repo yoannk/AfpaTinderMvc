@@ -13,11 +13,7 @@ namespace AfpaTinderMvc.Controllers
 
         public ActionResult Index()
         {
-            AfpaTinderContext afpaTinderContext = new AfpaTinderContext();
-
-            AfpaTinderContext.Personnes.Add(new Personne() { Nom = "dfdf", Prenom = "df", Email = "rrrr", Login = "bb", Password = "test2", Statut = true });
-
-            afpaTinderContext.SaveChanges();
+            InitDb();
             return View();
         }
 
@@ -33,6 +29,28 @@ namespace AfpaTinderMvc.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        private void InitDb()
+        {
+            //afpaTinderContext.Villes.Add(new Ville() { Nom = "Lille", CodePostal = "59000" });
+
+            Personne personne = new Personne()
+            {
+                Nom = "djhrfhjed",
+                Prenom = "jjdjkjks",
+                Login = ",xxclk",
+                Password = "djkfdjkfjkdjk",
+                Email = "jdjkdjkjkdkj",
+                Statut = true
+            };
+
+            Loisir loisir = new Loisir() { Nom = "voile" };
+
+            personne.Loisirs.Add(loisir);
+            AfpaTinderContext.Personnes.Add(personne);
+
+            AfpaTinderContext.SaveChanges();
         }
     }
 }
