@@ -33,8 +33,6 @@ namespace AfpaTinderMvc.Controllers
 
         private void InitDb()
         {
-            //afpaTinderContext.Villes.Add(new Ville() { Nom = "Lille", CodePostal = "59000" });
-
             Personne personne = new Personne()
             {
                 Nom = "djhrfhjed",
@@ -45,10 +43,23 @@ namespace AfpaTinderMvc.Controllers
                 Statut = true
             };
 
-            Loisir loisir = new Loisir() { Nom = "voile" };
+            Personne personneIndesirable = new Personne()
+            {
+                Nom = "indesirable",
+                Prenom = "pervers",
+                Login = ",xxclk",
+                Password = "djkfdjkfjkdjk",
+                Email = "jdjkdjkjkdkj",
+                Statut = true
+            };
 
-            personne.Loisirs.Add(loisir);
             AfpaTinderContext.Personnes.Add(personne);
+            AfpaTinderContext.Personnes.Add(personneIndesirable);
+
+            MotifIndesirable motifIndesirable = AfpaTinderContext.MotifIndesirables.Find(1);
+
+            Indesirable indesirable = new Indesirable() { Personne = personne, PersonneIndesirable = personneIndesirable, MotifIndesirable = motifIndesirable };
+            AfpaTinderContext.Indesirables.Add(indesirable);
 
             AfpaTinderContext.SaveChanges();
         }

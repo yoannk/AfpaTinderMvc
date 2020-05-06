@@ -11,7 +11,7 @@ namespace AfpaTinderMvc.Models
     {
         public Loisir()
         {
-            Personnes = new HashSet<Personne>()
+            Personnes = new HashSet<Personne>();
         }
 
         [Key]

@@ -137,6 +137,7 @@
     </Compile>
     <Compile Include="AfpaTinderContext.cs" />
     <Compile Include="InitDatabase\AfpaTinderDbInit.cs" />
+    <Compile Include="Models\Indesirable.cs" />
     <Compile Include="Models\Loisir.cs" />
     <Compile Include="Models\MotifIndesirable.cs" />
     <Compile Include="Models\Personne.cs" />

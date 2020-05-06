@@ -56,5 +56,7 @@ namespace AfpaTinderMvc.Models
         public virtual ICollection<Loisir> Loisirs { get; set; }
 
         public virtual ICollection<Photo> Photos { get; set; }
+
+        //public virtual ICollection<Personne> Favoris { get; set; }
     }
 }
