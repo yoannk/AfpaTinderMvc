@@ -13,6 +13,7 @@ namespace AfpaTinderMvc.Models
         public Personne()
         {
             Loisirs = new HashSet<Loisir>();
+            Photos = new HashSet<Photo>();
         }
 
         [Key]
@@ -50,6 +51,10 @@ namespace AfpaTinderMvc.Models
 
         public virtual Ville Ville { get; set; }
 
+        public virtual Photo PhotoDefault { get; set; }
+
         public virtual ICollection<Loisir> Loisirs { get; set; }
+
+        public virtual ICollection<Photo> Photos { get; set; }
     }
 }

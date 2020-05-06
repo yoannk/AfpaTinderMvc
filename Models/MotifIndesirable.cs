@@ -7,22 +7,15 @@ using System.Web;
 
 namespace AfpaTinderMvc.Models
 {
-    public class Loisir
+    public class MotifIndesirable
     {
-        public Loisir()
-        {
-            Personnes = new HashSet<Personne>()
-        }
-
         [Key]
-        [Column("idLoisir")]
-        public int IdLoisir { get; set; }
+        [Column("idMotifIndesirable")]
+        public int IdMotifIndesirable { get; set; }
 
         [StringLength(50)]
         [Required]
         [Column("nom")]
         public string Nom { get; set; }
-
-        public virtual ICollection<Personne> Personnes { get; set; }
     }
 }
