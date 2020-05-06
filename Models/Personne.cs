@@ -42,5 +42,9 @@ namespace AfpaTinderMvc.Models
         public double Latitude { get; set; }
 
         public double Longitude { get; set; }
+
+        public virtual Ville Ville { get; set; }
+
+        public virtual ICollection<Loisir> Loisirs { get; set; }
     }
 }
